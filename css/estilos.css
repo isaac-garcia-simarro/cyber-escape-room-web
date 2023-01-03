@@ -1,0 +1,178 @@
+body{
+  background-color:black;
+  color:red;
+}
+
+p{
+  padding:30px;
+  width:400px;
+  margin:auto;
+}
+
+
+
+/*CLASSES*/
+.center{
+  text-align:center;
+}
+
+.border{
+  border: 3px solid red;
+}
+
+.start{
+  padding: 20px;
+}
+
+.title{
+  padding:30px;
+  width:500px;
+  margin:auto;
+  margin-top:10px;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.input{
+  width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  margin-left:40px;
+  margin-top:20px;
+  background-color:black;
+  color:red;
+  border: 2px solid red;
+}
+
+.button{
+  background-color:black;
+  color:red;
+  border: 2px solid red;
+  width: 400px;
+  padding: 10px;
+  margin-left:40px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.button:hover{
+  background-color:red;
+  color:black;
+  border: 2px solid black;
+}
+
+.button_start{
+  background-color:black;
+  color:red;
+  border: 2px;
+  border-color: red;
+  border-style: dashed solid;
+  width: 400px;
+  padding: 10px;
+  margin-left:40px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.button_start:hover{
+  background-color:red;
+  color:black;
+  border: 2px;
+  border-color: black;
+  border-style: dashed solid;
+}
+
+.button3{
+ display: none;
+}
+
+.marquee{
+  position: relative;
+  animation-name: anim_marquee;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.img-small{
+    width: 200px;
+    height: 200px;
+}
+
+.img-big{
+  width: 300px;
+  height: 300px;
+}
+
+.black{
+    color:black;
+}
+
+.error{
+  color: red;
+  font-weight: bold;
+  padding: 10px;
+  margin-left:40px;
+}
+
+
+.big{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/*IDS*/
+#contenido{
+  width:500px;
+  margin:auto;
+  margin-top:40px;
+  font-size:16px;
+}
+
+
+
+/*ANIMATIONS*/
+@keyframes anim_marquee{
+  from{
+    left: 1000px;
+  }
+  to{
+    left: -1000px;
+  }
+}
+
+.box {
+  --border-size: 3px;
+  --border-angle: 0turn;
+  width: 60vmin;
+  height: 50vmin;
+  background-image: conic-gradient(
+      from var(--border-angle),
+      #213,
+      #112 50%,
+      #213
+    ),
+    conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+  background-size: calc(100% - (var(--border-size) * 2))
+      calc(100% - (var(--border-size) * 2)),
+    cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  animation: bg-spin 3s linear infinite;
+  @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
